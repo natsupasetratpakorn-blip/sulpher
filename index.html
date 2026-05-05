@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Official SulpherSMP Store. Get ranks, kits, crate keys, and perks to level up your Minecraft experience." />
+    <title>SulpherSMP - The Ultimate Minecraft Experience</title>
+    <link rel="icon" type="image/png" href="/config/sulpher-logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Open Graph / Discord Embed Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="⚔️ SulpherSMP Store | The Ultimate Minecraft Experience 🚀" />
+    <meta property="og:description" content="Get premium ranks, powerful kits, and rare crate keys on the official SulpherSMP Store." />
+    <meta property="og:image" content="/config/sulpher-logo.png" />
+    <meta name="theme-color" content="#0B0F14" />
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="⚔️ SulpherSMP Store | The Ultimate Minecraft Experience 🚀" />
+    <meta name="twitter:description" content="Get premium ranks, powerful kits, and rare crate keys on the official SulpherSMP Store." />
+    <meta name="twitter:image" content="/config/sulpher-logo.png" />
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+
+      html,
+      body,
+      #root {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background:
+          radial-gradient(circle at 12% 8%, rgba(0, 168, 255, 0.15), transparent 30%),
+          radial-gradient(circle at 88% 16%, rgba(0, 255, 200, 0.12), transparent 32%),
+          #0b0f14;
+      }
+
+      a,
+      button,
+      input,
+      textarea,
+      select {
+        transition: box-shadow 160ms ease, border-color 160ms ease, transform 160ms ease;
+      }
+
+      :focus-visible {
+        outline: 2px solid rgba(0, 168, 255, 0.7);
+        outline-offset: 2px;
+      }
+
+      #initial-loader {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        gap: 12px;
+        background: linear-gradient(180deg, #0b0f14 0%, #090c11 100%);
+        color: #e5efff;
+        font-family: Inter, system-ui, sans-serif;
+        letter-spacing: 0.02em;
+        transition: opacity 260ms ease;
+      }
+
+      #initial-loader.hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      #initial-loader .dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 999px;
+        border: 3px solid rgba(255, 255, 255, 0.18);
+        border-top-color: #00a8ff;
+        animation: spin 900ms linear infinite;
+      }
+
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+    </style>
+    <script src="/config/app.config.js?v=20260331-1"></script>
+    <script type="module" crossorigin src="/assets/index-D6D3wxNf.js?v=20260331-1"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D3AAnZ6Y.css?v=20260330-1">
+  </head>
+  <body>
+    <div id="initial-loader" aria-live="polite" role="status">
+      <div class="dot" aria-hidden="true"></div>
+      <div>Loading SulpherSMP Store...</div>
+    </div>
+    <div id="root"></div>
+    <script>
+      (function () {
+        const loader = document.getElementById("initial-loader");
+        const root = document.getElementById("root");
+        if (!loader || !root) return;
+
+        const hideLoader = () => {
+          loader.classList.add("hide");
+          window.setTimeout(() => loader.remove(), 320);
+        };
+
+        if (root.childElementCount > 0) {
+          hideLoader();
+          return;
+        }
+
+        const observer = new MutationObserver(() => {
+          if (root.childElementCount > 0) {
+            observer.disconnect();
+            hideLoader();
+          }
+        });
+
+        observer.observe(root, { childList: true, subtree: true });
+        window.setTimeout(() => {
+          observer.disconnect();
+          hideLoader();
+        }, 3200);
+      })();
+    </script>
+  </body>
+</html>
+
